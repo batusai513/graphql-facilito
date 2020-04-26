@@ -1,0 +1,14 @@
+{
+  "name": "graphql-facilito",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "graphql": "^15.0.0"
+  },
+  "volta": {
+    "node": "14.0.0",
+    "yarn": "1.22.4"
+  }
+}

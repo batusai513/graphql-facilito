@@ -1,0 +1,27 @@
+type User {
+  id: ID!
+  email: String!
+  hashedPassword: String
+  token: String
+  courses: [Course]
+}
+
+input getUserInput {
+  id: ID!
+}
+
+input userInput {
+  email: String!
+  password: String!
+}
+
+extend type Query {
+  getUsers: [User!]!
+  getUser(input: getUserInput): User
+}
+
+extend type Mutation {
+  signUp(input: userInput): User
+  signIn(input: userInput): User
+  signOut: Boolean
+}

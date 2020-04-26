@@ -1,0 +1,37 @@
+type Course {
+  id: ID!
+  title: String!
+  views: Int
+  user: User
+}
+
+input getCoursesInput {
+  page: Int
+  limit: Int = 1
+}
+
+input getCourseInput {
+  id: ID!
+}
+
+input createCourseInput {
+  title: String!
+  userId: ID!
+}
+
+input updateCourseInput {
+  id: ID!
+  title: String
+  views: Int
+}
+
+extend type Query {
+  getCourses(input: getCoursesInput): [Course]
+  getCourse(input: getCourseInput): Course
+}
+
+extend type Mutation {
+  createCourse(input: createCourseInput): Course
+  updateCourse(input: updateCourseInput): Course
+  removeCourse(input: getCourseInput): Course
+}
